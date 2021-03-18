@@ -1,0 +1,8 @@
+Install following libraries
+
+pip install docxtpl
+
+conda
+
+conda install lxml
+

@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.0">
+  <object class="ttk.Frame" id="top_level">
+    <property name="cursor">based_arrow_up</property>
+    <property name="height">200</property>
+    <property name="padding">10</property>
+    <property name="width">200</property>
+    <layout manager="grid">
+      <property name="propagate">True</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="header_label">
+        <property name="font">{Arial} 16 {bold}</property>
+        <property name="text" translatable="yes">Automated document filler using NIC</property>
+        <layout manager="grid">
+          <property name="pady">20</property>
+          <property name="propagate">True</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="top_controls_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="pady">10</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="tk.Button" id="template_btn">
+            <property name="command">openTemplateDialog</property>
+            <property name="text" translatable="yes">Select Template</property>
+            <layout manager="grid">
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="front_img_btn">
+            <property name="command">getFrontImageData</property>
+            <property name="text" translatable="yes">NIC front image</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="back_img_btn">
+            <property name="command">getBackImageData</property>
+            <property name="text" translatable="yes">NIC back image</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="selected_template_label">
+            <property name="font">{Arial} 10 {}</property>
+            <property name="text" translatable="yes">Selected template</property>
+            <property name="wraplength">160</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="loading_label">
+            <property name="font">{Arial} 10 {italic}</property>
+            <property name="foreground">#288916</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="input_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="name_label">
+            <property name="compound">right</property>
+            <property name="text" translatable="yes">Name</property>
+            <layout manager="grid">
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="nic_label">
+            <property name="text" translatable="yes">NIC</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="gender_label">
+            <property name="text" translatable="yes">Gender</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="dob_label">
+            <property name="text" translatable="yes">Date of birth</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="address_label">
+            <property name="text" translatable="yes">Address</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="pob_label">
+            <property name="text" translatable="yes">Place of birth</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="name_entry">
+            <property name="width">44</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">10</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="nic_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">10</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="gender_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">10</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="dob_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">10</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="address_entry">
+            <property name="width">44</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">10</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="pob_entry">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="pady">10</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="bottom_controls_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+        <child>
+          <object class="tk.Button" id="fill_btn">
+            <property name="command">fillTemplate</property>
+            <property name="font">{Arial} 10 {bold}</property>
+            <property name="text" translatable="yes">Fill template</property>
+            <layout manager="grid">
+              <property name="propagate">True</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="clear_btn">
+            <property name="command">clear</property>
+            <property name="font">{Arial} 10 {bold}</property>
+            <property name="text" translatable="yes">Clear</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
